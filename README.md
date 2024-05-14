@@ -1,5 +1,5 @@
 # script-extractor
-extract script and it's properties from string
+extract script and it's properties from "string"
 
 
 Executing extract
