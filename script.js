@@ -1,5 +1,3 @@
-import Script from "next/script"; // replace with another choice
-
 /** 
 *  Entry point
 *  [list of script string]
@@ -34,7 +32,7 @@ export const scriptExtractor = (script, idx) => {
     // case: <script>....</script>
     if (/^(<script>).*/.test(_script)) {
       return (
-        <Script
+        <script
           key={"script-" + idx}
           id={"script-" + idx}
           dangerouslySetInnerHTML={{
@@ -60,7 +58,7 @@ export const scriptExtractor = (script, idx) => {
         });
 
         return (
-          <Script key={"script-" + idx} id={"script-" + idx} {...transfer} />
+          <script key={"script-" + idx} id={"script-" + idx} {...transfer} />
         );
       } else if (scriptTestReg.test(_script)) {
         // case: <script async defer src="..."> ... </script>
@@ -81,7 +79,7 @@ export const scriptExtractor = (script, idx) => {
         });
 
         return (
-          <Script
+          <script
             key={"script-" + idx}
             id={"script-" + idx}
             {...transfer}
@@ -93,7 +91,7 @@ export const scriptExtractor = (script, idx) => {
       // case:  script content without script tags
 
       return (
-        <Script
+        <script
           key={"script-" + idx}
           id={"script-" + idx}
           dangerouslySetInnerHTML={{ __html: script }}
